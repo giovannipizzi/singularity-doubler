@@ -5,9 +5,11 @@ From: alpine:3.9
    doubler.sh /bin/
 
 %post
+    # The script needs bash
     apk update
     apk upgrade
     apk add bash
+    # Ensure it's executable
     chmod +x /bin/doubler.sh    
 
 %environment
