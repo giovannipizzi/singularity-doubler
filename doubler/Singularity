@@ -1,0 +1,17 @@
+Bootstrap: docker
+From: alpine:3.9
+
+%files
+   doubler.sh /bin/
+
+%post
+    apk update
+    apk upgrade
+    apk add bash
+    chmod +x /bin/doubler.sh    
+
+%environment
+    export LC_ALL=en_US.UTF-8
+
+%runscript
+    /bin/doubler.sh
